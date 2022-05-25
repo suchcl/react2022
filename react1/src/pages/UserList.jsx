@@ -8,11 +8,11 @@ const UserList = () => {
         },
         {
             id: 2,
-            name: "张文宏"
+            name: "Axel Rauschmayer"
         },
         {
             id: 3,
-            name: "胡锡进"
+            name: "technology"
         }
     ];
     const [title, setTitle] = useState("React第一课");
