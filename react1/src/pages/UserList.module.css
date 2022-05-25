@@ -1,0 +1,10 @@
+.user{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.user li {
+    font-size: 14px;
+    line-height: 26px;
+    color: #369;
+}
