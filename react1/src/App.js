@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Products from './components/product';
 import Link from './components/Link';
 import Count from './components/Count';
+import CountGroup from './components/CountGroup';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         <Count />
         <Count />
         <Count />
+      </div>
+      <div className={style.count}>
+        <CountGroup />
       </div>
     </div>
   );
