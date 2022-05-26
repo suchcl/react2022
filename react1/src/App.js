@@ -1,4 +1,5 @@
 import './App.css';
+import style from "./app.module.css";
 import MyButton from './components/MyButton';
 import Input from './components/Input';
 import User from './components/User';
@@ -7,6 +8,7 @@ import Profile from './components/profile';
 import Login from './components/Login';
 import Products from './components/product';
 import Link from './components/Link';
+import Count from './components/Count';
 
 function App() {
   return (
@@ -20,6 +22,11 @@ function App() {
       <Login />
       <Products />
       <Link />
+      <div className={style.count}>
+        <Count />
+        <Count />
+        <Count />
+      </div>
     </div>
   );
 }

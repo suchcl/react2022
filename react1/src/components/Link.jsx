@@ -4,7 +4,9 @@ const Link = () => {
         console.log("clicked");
     }
     return (
-        <a href="https://www.baidu.com" onClick={handleClick}>百度</a>
+        <>
+            <a href="https://www.baidu.com" onClick={handleClick}>百度</a>
+        </>
     );
 }
 
