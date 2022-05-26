@@ -1,3 +1,4 @@
+import { useState } from "react";
 import style from "./stock.module.css";
 const stock = [
     { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
@@ -33,10 +34,16 @@ const ProductRow = ({ product }) => {
 }
 
 // 根据用户输入显示和筛选的组件
-const ProductTable = ({ products }) => {
+const ProductTable = ({ products, filterText, inStockOnly }) => {
     const rows = [];
     let lastCategory = null;
     products.forEach(product => {
+        if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
+            return;
+        }
+        if (inStockOnly && !product.stock) {
+            return;
+        }
         if (product.category !== lastCategory) {
             rows.push(
                 <ProductCategoryRow key={product.category} category={product.category} />
@@ -64,12 +71,22 @@ const ProductTable = ({ products }) => {
 }
 
 // 搜索组件
-const SearchBar = () => {
+const SearchBar = ({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) => {
     return (
         <form>
-            <input type="text" placeholder="searching" />
+            <input
+                type="text"
+                placeholder="searching"
+                value={filterText}
+                onChange={(e) => onFilterTextChange(e.target.value)}
+            />
             <label className={style.lb}>
-                <input type="checkbox" />{''}
+                <input
+                    type="checkbox"
+                    checked={inStockOnly}
+                    onChange={(e) => onInStockOnlyChange(e.target.checked)}
+                />
+                {''}
                 仅展示有库存商品
             </label>
         </form>
@@ -79,11 +96,22 @@ const SearchBar = () => {
 
 // 库存筛选组件
 const FilterableProductTable = () => {
+    const [filterText, setFilterText] = useState("");
+    const [inStockOnly, setInStockOnly] = useState(false);
     return (
         <>
             <div className={style.stock}>
-                <SearchBar />
-                <ProductTable products={stock} />
+                <SearchBar
+                    filterText={filterText}
+                    inStockOnly={inStockOnly}
+                    onFilterTextChange={setFilterText}
+                    onInStockOnlyChange={setInStockOnly}
+                />
+                <ProductTable
+                    products={stock}
+                    filterText={filterText}
+                    inStockOnly={inStockOnly}
+                />
             </div>
         </>
     );
