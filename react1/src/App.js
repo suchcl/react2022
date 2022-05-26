@@ -10,6 +10,7 @@ import Products from './components/product';
 import Link from './components/Link';
 import Count from './components/Count';
 import CountGroup from './components/CountGroup';
+import FilterableProductTable from './components/FilterableProductTable';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <div className={style.count}>
         <CountGroup />
       </div>
+      <FilterableProductTable />
     </div>
   );
 }
