@@ -5,6 +5,7 @@ import User from './components/User';
 import UserList from './pages/UserList';
 import Profile from './components/profile';
 import Login from './components/Login';
+import Products from './components/product';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <UserList />
       <Profile />
       <Login />
+      <Products />
     </div>
   );
 }
