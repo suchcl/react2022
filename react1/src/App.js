@@ -11,6 +11,7 @@ import Link from './components/Link';
 import Count from './components/Count';
 import CountGroup from './components/CountGroup';
 import FilterableProductTable from './components/FilterableProductTable';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <CountGroup />
       </div>
       <FilterableProductTable />
+      <Gallery />
     </div>
   );
 }

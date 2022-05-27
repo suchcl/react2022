@@ -41,7 +41,8 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
         if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
             return;
         }
-        if (inStockOnly && !product.stock) {
+        console.log("inStockOnly && !product.stocked:", inStockOnly && !product.stocked);
+        if (inStockOnly && !product.stocked) {
             return;
         }
         if (product.category !== lastCategory) {
