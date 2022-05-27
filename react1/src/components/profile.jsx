@@ -1,4 +1,4 @@
-import style from "./Profile.module.css";
+import style from "./Profile.module.less";
 import portrait from "../assets/images/0db6b.jpeg";
 const user = {
     name: "Katharine Houghton Hepburn",
