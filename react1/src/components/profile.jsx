@@ -6,7 +6,17 @@ const user = {
     imageSize: 100
 };
 
+function formatDate(date) {
+    return new Intl.DateTimeFormat(
+        "zh-CN",
+        {
+            weekday: 'long'
+        }
+    ).format(date);
+}
+
 const Profile = () => {
+    const today = new Date("2022-5-31");
     return (
         <div className={style.profile}>
             <h2>{user.name}</h2>
@@ -21,6 +31,7 @@ const Profile = () => {
                     width: "90px",
                     height: "90px"
                 }}></img>
+            <h3>时间：{formatDate(today)}</h3>
         </div>
     );
 }
