@@ -14,6 +14,13 @@ const Profile = () => {
                 width: user.imageSize,
                 height: user.imageSize
             }} />
+            <img
+                src={user.portrait}
+                alt={user.name}
+                style={{
+                    width: "90px",
+                    height: "90px"
+                }}></img>
         </div>
     );
 }
