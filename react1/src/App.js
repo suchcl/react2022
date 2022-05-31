@@ -12,11 +12,14 @@ import Count from './components/Count';
 import CountGroup from './components/CountGroup';
 import FilterableProductTable from './components/FilterableProductTable';
 import Gallery from './components/Gallery';
+import { Button } from 'antd';
+import PracticalTable from "./components/Table";
 
 function App() {
   return (
     <div className="App">
       <MyButton></MyButton>
+      <Button type="primary">antd中的Button</Button>
       <Input />
       <div className='divider'>华丽的分割线</div>
       <User />
@@ -35,6 +38,7 @@ function App() {
       </div>
       <FilterableProductTable />
       <Gallery />
+      <PracticalTable />
     </div>
   );
 }
