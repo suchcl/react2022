@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>类组件</title>
+    <title>setState</title>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
@@ -21,24 +21,32 @@
                 this.state = {
                     isShow: true,
                     showStr: "Hello World!"
-                };
+                }
             }
 
-            triggle = () => {
+            trigger = () => {
                 this.setState({
                     isShow: !this.state.isShow
                 });
+                console.log(this.state.isShow);
             }
+
+            componentDidMount(){
+                this.setState({
+                    showStr: "我爱我的祖国"
+                });
+                console.log("componentDidMount:", this.state.showStr);
+            }
+
             render() {
                 return (
                     <div>
-                        {this.state.isShow && <p>{this.state.showStr}</p>}
-                        <button onClick={this.triggle}>{this.state.isShow ? "隐藏" : "展示"}</button>
+                        <p>{this.state.showStr}</p>
+                        <button onClick={this.trigger}>{this.state.isShow ? "隐藏" : "展示"}</button>
                     </div>
                 )
             }
         }
-
         ReactDOM.render(<ShowAndHidden />, document.getElementById("app"));
     </script>
 </body>
