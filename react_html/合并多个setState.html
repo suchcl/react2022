@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setState合并</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class ShowAndHidden extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    isShow: true,
+                    showStr: "Hello World!"
+                };
+            }
+
+            trigger = () => {
+                this.setState({
+                    showStr: "点击了按钮1"
+                }, () => {
+                    console.log("@@按钮1:", this.state);
+                });
+            }
+
+            handleClick = () => {
+                this.setState({
+                    showStr: "按钮2"
+                }, () => {
+                    console.log('@@按钮2:', this.state);
+                });
+
+                this.setState({
+                    showStr: "按钮2按钮2"
+                }, () => {
+                    console.log("@@按钮2:", this.state);
+                });
+
+                this.setState({
+                    showStr: "按钮2按钮2按钮2"
+                }, () => {
+                    console.log('@@按钮2:', this.state);
+                });
+            }
+
+            render() {
+                return (
+                    <div>
+                        <p>{this.state.showStr}</p>
+                        <button onClick={this.trigger}>点击</button>
+                        <button onClick={this.handleClick}>点击2</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<ShowAndHidden />, document.getElementById("app"));
+    </script>
+</body>
+
+</html>
