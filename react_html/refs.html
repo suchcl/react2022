@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>refs</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <button class="dom-btn" id="domBtn">DOM按钮</button>
+    <script type="text/babel">
+        console.log(document.getElementById("domBtn"));
+        document.getElementById("domBtn").addEventListener("click", () => {
+            console.log("dom按钮被点击了");
+        })
+        class Person extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    isShow: true,
+                    showStr: "Nicholas Zakas"
+                };
+            }
+
+            trigger = () => {
+                // console.log('@@ref的btn:', this.refs.btn)
+                console.log('@@btn2:', this.refs.btn2);
+                console.log("@@input:", this.refs.msg.value);
+                
+                // 下面的代码不会被执行，
+                this.refs.btn2.addEventListener('click', function () {
+                    console.log("11111");
+                })
+            }
+
+            componentDidMount(){
+                this.refs.btn2.addEventListener("click", () => {
+                    console.log("按钮2被点击了");
+                })
+            }
+
+            render() {
+                return (
+                    <div>
+                        <p>{this.state.showStr}</p>
+                        {/* string方式refs，不推荐使用了，了解即可 */}
+                        <input type="text" ref="msg" />
+                        <button onClick={this.trigger}>点击</button>
+                        <button ref="btn2">点击2</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Person />, document.getElementById("app"));
+    </script>
+</body>
+
+</html>
