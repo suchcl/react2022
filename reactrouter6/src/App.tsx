@@ -5,9 +5,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <ul className='menu'>
+          <li>首页</li>
+          <li>列表</li>
+          <li>反馈</li>
+        </ul>
       </header>
     </div>
   );
