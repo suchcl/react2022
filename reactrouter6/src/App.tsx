@@ -1,16 +1,11 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <ul className='menu'>
-          <li>首页</li>
-          <li>列表</li>
-          <li>反馈</li>
-        </ul>
-      </header>
+      <Header />
     </div>
   );
 }
