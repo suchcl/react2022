@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink,Routes,Route } from "react-router-dom";
 import styles from "./index.module.less";
 interface PageProps {
 
