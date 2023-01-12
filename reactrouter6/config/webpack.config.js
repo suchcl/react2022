@@ -320,10 +320,9 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        // 文件路径别名
-        // '@': paths.appSrc
-        '@': path.resolve(__dirname, "../src"),
-        // '@pages': path.resolve(__dirname, "../src/pages")
+        // 文件路径别名  下面的配置方式，都没有成功
+        '@': paths.appSrc
+        // '@': path.resolve(__dirname, "../src"),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
