@@ -8,18 +8,6 @@
   }
 }
 
-.App-header {
-  display: flex;
-  font-size: calc(10px + 2vmin);
-  color: #333;
-  height: 50px;
-  /* background-color: rgb(3, 100, 255); */
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +23,10 @@ ol {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }

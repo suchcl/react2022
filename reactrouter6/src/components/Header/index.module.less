@@ -1,20 +1,23 @@
 .header {
-    display: flex;
-    font-size: calc(10px + 2vmin);
-    color: #333;
-    height: 50px;
-    background-color: #0364FF;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: #333;
+  height: 50px;
+  background-color: #0364ff;
 }
 .menu {
   display: flex;
   align-items: center;
   height: 50px;
-}
-.menu li {
-  font-size: 14px;
-  margin: 0 10px;
-  color: #fff;
-}
-.menu li a {
-  color: #fff;
+  li {
+    font-size: 14px;
+    margin: 0 10px;
+    color: #fff;
+    a{
+      color: #fff;
+      &.nav-active{
+        color: #f20;
+      }
+    }
+  }
 }
