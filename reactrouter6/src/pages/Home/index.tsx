@@ -1,12 +1,9 @@
 import { FC, memo, useState } from "react";
 import styles from "./index.module.less";
 import { Link, useNavigate } from "react-router-dom";
+import { ProductProps } from "@/types";
 interface PageProps { }
-interface ProductProps {
-    id: number;
-    name: string;
-    price: string;
-}
+
 const data: Array<ProductProps> = [
     {
         id: 1,

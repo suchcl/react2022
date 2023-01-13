@@ -16,7 +16,7 @@
     transform: rotate(360deg);
   }
 }
-h1,h3 {
+h1,h3,p {
   padding: 0;
   margin: 0;
 }
@@ -34,5 +34,6 @@ a:hover {
   text-decoration: underline;
 }
 .page-container{
-  padding: 0;
+  text-align: left;
+  padding: 0 0 0 20px;
 }

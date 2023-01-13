@@ -1,5 +1,6 @@
 import { FC, memo } from "react";
 import { useLocation } from "react-router-dom";
+import styles from './index.module.less';
 
 interface PageProps { }
 const ProductList: FC<PageProps> = (props) => {
@@ -13,7 +14,7 @@ const ProductList: FC<PageProps> = (props) => {
                 {
                     state.map((item: any) => {
                         return (
-                            <li key={item.id}>
+                            <li key={item.id} className={styles['product-item']}>
                                 <p>名称: {item.name}</p>
                                 <p>价格: {item.price}</p>
                             </li>

@@ -8,7 +8,7 @@ const data: ProductProps = {
     price: '159'
 };
 const Header: FC<PageProps> = (props) => {
-    const product = useState<ProductProps>(data);
+    const [product,setProduct] = useState<ProductProps>(data);
     return (
         <header className={styles.header}>
             <ul className={styles.menu}>
