@@ -40,6 +40,7 @@ const Home: FC<PageProps> = (props) => {
                 <Link className={styles.link} to='/productList' state={product}>产品列表</Link>
             </div>
             <button onClick={sendCommonTypeData}>Navigate命令式传递普通类型值</button>
+            <Link to='/feed'>验证接收Navigator传递的对象类型值</Link>
         </div>
     )
 }
