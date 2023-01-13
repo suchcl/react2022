@@ -25,6 +25,13 @@ const Home: FC<PageProps> = (props) => {
     }
     const [product, setProduct] = useState(data); // 商品信息
 
+    // Navigate通过命令式传递普通类型值
+    const sendCommonTypeData = () => {
+        navigate("/navigateCmp", {
+            state: "命令式传值"
+        });
+    }
+
     return (
         <div className={styles.home}>
             <h3>Home</h3>
@@ -32,6 +39,7 @@ const Home: FC<PageProps> = (props) => {
             <div className={styles['product-style']}>
                 <Link className={styles.link} to='/productList' state={product}>产品列表</Link>
             </div>
+            <button onClick={sendCommonTypeData}>Navigate命令式传递普通类型值</button>
         </div>
     )
 }
