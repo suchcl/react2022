@@ -48,6 +48,11 @@ const Home: FC<PageProps> = (props) => {
             state: product
         });
     }
+
+    const dynamicRoute = () => {
+        const id = 6;
+        navigate(`/detail/${id}`);
+    }
     return (
         <div className={styles.home}>
             <h3>Home</h3>
@@ -63,6 +68,8 @@ const Home: FC<PageProps> = (props) => {
             <button onClick={sendObjData}>userNavigate传递对象类型值</button>
             <br />
             <button onClick={sendArrayData}>userNavigate传递数组类型值</button>
+            <br />
+            <button onClick={dynamicRoute}>动态跳转路由</button>
         </div>
     )
 }
