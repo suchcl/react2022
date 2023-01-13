@@ -14,6 +14,8 @@ import ProductList from '@/pages/ProductList';
 import NavigateCmp from '@/pages/NavigatorCmp';
 import NavigateObj from '@/pages/NavigatorCmp/NavigateObj';
 import NavigateList from '@/pages/NavigatorCmp/NavigateList';
+import UseNavigateObj from '@/pages/UseNavigate/UseNavigateObj';
+import UseNavigateList from '@/pages/UseNavigate/UseNavigateList';
 
 const navigateData = {
   name: "Nicholas Zakas",
@@ -55,6 +57,8 @@ function App() {
           <Route path="/navigateCmp" element={<NavigateCmp />} />
           <Route path="/navigateObj" element={<NavigateObj />} />
           <Route path='/navigateList' element={<NavigateList />} />
+          <Route path='/useNavigateObj' element={<UseNavigateObj />} />
+          <Route path='/useNavigateList' element = {<UseNavigateList />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

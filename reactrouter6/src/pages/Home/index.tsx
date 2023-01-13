@@ -16,6 +16,10 @@ const data: Array<ProductProps> = [
         price: '4999'
     }
 ];
+const productData = {
+    name: '显示器',
+    price: '1999'
+};
 const Home: FC<PageProps> = (props) => {
     // 声明一个useNavigate实例
     const navigate = useNavigate();
@@ -24,6 +28,7 @@ const Home: FC<PageProps> = (props) => {
         navigate('/docs');
     }
     const [product, setProduct] = useState(data); // 商品信息
+    const [productObj, setProductObj] = useState(productData);
 
     // Navigate通过命令式传递普通类型值
     const sendCommonTypeData = () => {
@@ -32,6 +37,17 @@ const Home: FC<PageProps> = (props) => {
         });
     }
 
+    const sendObjData = () => {
+        navigate('/useNavigateObj', {
+            state: productObj
+        });
+    }
+
+    const sendArrayData = () => {
+        navigate('/useNavigateList', {
+            state: product
+        });
+    }
     return (
         <div className={styles.home}>
             <h3>Home</h3>
@@ -43,6 +59,10 @@ const Home: FC<PageProps> = (props) => {
             <Link to='/feed'>验证接收Navigator传递的对象类型值</Link>
             <br />
             <Link to='/userList'>接收Navigate传递的数组类型值</Link>
+            <br />
+            <button onClick={sendObjData}>userNavigate传递对象类型值</button>
+            <br />
+            <button onClick={sendArrayData}>userNavigate传递数组类型值</button>
         </div>
     )
 }
