@@ -41,6 +41,8 @@ const Home: FC<PageProps> = (props) => {
             </div>
             <button onClick={sendCommonTypeData}>Navigate命令式传递普通类型值</button>
             <Link to='/feed'>验证接收Navigator传递的对象类型值</Link>
+            <br />
+            <Link to='/userList'>接收Navigate传递的数组类型值</Link>
         </div>
     )
 }
