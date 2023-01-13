@@ -321,8 +321,9 @@ module.exports = function (webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
         // 文件路径别名  下面的配置方式，都没有成功
-        '@': paths.appSrc
+        '@': paths.appSrc,
         // '@': path.resolve(__dirname, "../src"),
+        '@components': path.resolve(__dirname,"../src/components")
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).

@@ -7,7 +7,10 @@ import NewsList from '@/pages/NewsList';
 import Feedback from '@/pages/Feedback';
 import Docs from '@/pages/Docs';
 import PageNotFound from '@/pages/Error/PageNotFound';
-import About from '@/pages/About';
+// import About from '@/pages/About';
+import Product from '@/pages/Product';
+import Product2 from '@/pages/Product/Product2';
+import ProductList from '@/pages/ProductList';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path='/feedback' element={<Feedback />} />
           <Route path='/docs' element={<Docs />} />
           <Route path='/about' element={<Navigate to='/home' />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/product2' element={<Product2 />} />
+          <Route path='/productList' element={<ProductList />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
