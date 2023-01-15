@@ -1,5 +1,5 @@
 import { FC, memo, useState } from "react";
-import { Link, NavLink, Navigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./index.module.less";
 import { ProductProps } from "@components/types";
 interface PageProps {}
@@ -50,6 +50,14 @@ const Header: FC<PageProps> = (props) => {
                         }
                     }>产品2</Link> */}
                     <Link to='/product2' state={product}>产品3</Link>
+                </li>
+            </ul>
+            <ul className={styles.ucenter}>
+                <li>
+                    <Link to="/messageList">消息列表</Link>
+                </li>
+                <li>
+                    <Link to="/settings">设置</Link>
                 </li>
             </ul>
         </header>

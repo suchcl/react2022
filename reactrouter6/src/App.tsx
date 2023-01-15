@@ -17,6 +17,9 @@ import NavigateList from '@/pages/NavigatorCmp/NavigateList';
 import UseNavigateObj from '@/pages/UseNavigate/UseNavigateObj';
 import UseNavigateList from '@/pages/UseNavigate/UseNavigateList';
 import Detail from '@/pages/Detail';
+import MessageList from '@/pages/Message/MessageList';
+import MessageDetail from '@/pages/Message/MessageDetail'
+import Settings from '@/pages/Settings';
 
 const navigateData = {
   name: "Nicholas Zakas",
@@ -38,7 +41,7 @@ const uList = [
 
 function App() {
   const [user, setUser] = useState(navigateData);
-  const [userList,setUserList] = useState(uList);
+  const [userList, setUserList] = useState(uList);
   return (
     <div className="App">
       <Header />
@@ -59,8 +62,10 @@ function App() {
           <Route path="/navigateObj" element={<NavigateObj />} />
           <Route path='/navigateList' element={<NavigateList />} />
           <Route path='/useNavigateObj' element={<UseNavigateObj />} />
-          <Route path='/useNavigateList' element = {<UseNavigateList />} />
+          <Route path='/useNavigateList' element={<UseNavigateList />} />
           <Route path='/detail/:id' element={<Detail />} />
+          <Route path="/messageList" element={<MessageList />} />
+          <Route path='/settings' element={<Settings />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
