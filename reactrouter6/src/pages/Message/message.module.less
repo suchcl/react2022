@@ -1,9 +1,24 @@
-.message-detail-container {
-
-}
-.message-list {
-    font-size: 14px;
-    line-height: 2;
-    padding: 10px 20px;
-    background-color: antiquewhite;
+.message-contaienr {
+    display: flex;
+    padding-top: 10px;
+    .message-list-container {
+        width: 200px;
+        margin-right: 20px;
+        padding: 10px 20px;
+        background-color: antiquewhite;
+        .message-list {
+            font-size: 14px;
+            line-height: 2;
+            .message-item:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    .message-detail-container {
+        background-color: cadetblue;
+        flex: 1;
+        margin-right: 20px;
+        padding: 10px 20px;
+        color: #fff;
+    }
 }

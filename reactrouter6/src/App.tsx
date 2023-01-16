@@ -64,7 +64,10 @@ function App() {
           <Route path='/useNavigateObj' element={<UseNavigateObj />} />
           <Route path='/useNavigateList' element={<UseNavigateList />} />
           <Route path='/detail/:id' element={<Detail />} />
-          <Route path="/messageList" element={<MessageList />} />
+          {/* <Route path="/messageList/*" element={<MessageList />} /> */}
+          <Route path='/messageList' element={<MessageList />}>
+            <Route path=":id" element={<MessageDetail />} />
+          </Route> 
           <Route path='/settings' element={<Settings />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>

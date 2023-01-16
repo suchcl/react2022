@@ -17,7 +17,7 @@ const Conversations: FC<PageProps> = ({ messageList }) => {
                 {
                     messageList.map((item:any) => {
                         return (
-                            <li key={item.id} onClick={() => toMsgDetail(item.id)}>{item.title}</li>
+                            <li key={item.id} className={styles['message-item']} onClick={() => toMsgDetail(item.id)}>{item.title}</li>
                         )
                     })
                 }
