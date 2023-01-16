@@ -21,6 +21,7 @@ import MessageList from '@/pages/Message/MessageList';
 import MessageDetail from '@/pages/Message/MessageDetail'
 import MessageOutletContainer from '@/pages/Message/MessageOutletContainer';
 import Settings from '@/pages/Settings';
+import SearchParams from "@/pages/SearchParams/SearchParams";
 
 const navigateData = {
   name: "Nicholas Zakas",
@@ -68,8 +69,9 @@ function App() {
           <Route path="/messageList/*" element={<MessageList />} />
           <Route path='/messageOutlet' element={<MessageOutletContainer />}>
             <Route path=":id" element={<MessageDetail />} />
-          </Route> 
+          </Route>
           <Route path='/settings' element={<Settings />} />
+          <Route path='/searchParams' element={<SearchParams />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

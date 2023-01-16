@@ -2,6 +2,7 @@ import { FC, memo, useState } from "react";
 import styles from "./index.module.less";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductProps } from "@/types";
+import WidthSearchParams from "./components/SearchParam/WidthSearchParams";
 interface PageProps { }
 
 const data: Array<ProductProps> = [
@@ -70,6 +71,7 @@ const Home: FC<PageProps> = (props) => {
             <button onClick={sendArrayData}>userNavigate传递数组类型值</button>
             <br />
             <button onClick={dynamicRoute}>动态跳转路由</button>
+            <WidthSearchParams />
         </div>
     )
 }
