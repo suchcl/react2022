@@ -6,7 +6,6 @@ interface PageProps{}
 
 const MessageDetail:FC<PageProps> = (props) => {
     const {id} = useParams();
-    console.log('%c [ id ]-8', 'font-size:13px; background:pink; color:#bf2c9f;', id)
 
     return (
         <div className={styles['message-detail-container']}>

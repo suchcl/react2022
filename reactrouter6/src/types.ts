@@ -4,3 +4,9 @@ export interface ProductProps {
     name: string;
     price: string;
 }
+
+// 消息
+export interface MessageTypes {
+    id: number;
+    title: string;
+}

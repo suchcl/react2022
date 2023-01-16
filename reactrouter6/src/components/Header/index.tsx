@@ -57,6 +57,9 @@ const Header: FC<PageProps> = (props) => {
                     <Link to="/messageList">消息列表</Link>
                 </li>
                 <li>
+                    <Link to="/messageOutlet">嵌套路由，Outlet占位</Link>
+                </li>
+                <li>
                     <Link to="/settings">设置</Link>
                 </li>
             </ul>

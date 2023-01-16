@@ -19,6 +19,7 @@ import UseNavigateList from '@/pages/UseNavigate/UseNavigateList';
 import Detail from '@/pages/Detail';
 import MessageList from '@/pages/Message/MessageList';
 import MessageDetail from '@/pages/Message/MessageDetail'
+import MessageOutletContainer from '@/pages/Message/MessageOutletContainer';
 import Settings from '@/pages/Settings';
 
 const navigateData = {
@@ -64,8 +65,8 @@ function App() {
           <Route path='/useNavigateObj' element={<UseNavigateObj />} />
           <Route path='/useNavigateList' element={<UseNavigateList />} />
           <Route path='/detail/:id' element={<Detail />} />
-          {/* <Route path="/messageList/*" element={<MessageList />} /> */}
-          <Route path='/messageList' element={<MessageList />}>
+          <Route path="/messageList/*" element={<MessageList />} />
+          <Route path='/messageOutlet' element={<MessageOutletContainer />}>
             <Route path=":id" element={<MessageDetail />} />
           </Route> 
           <Route path='/settings' element={<Settings />} />
