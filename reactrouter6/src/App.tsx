@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useRoutes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -22,6 +22,7 @@ import MessageDetail from '@/pages/Message/MessageDetail'
 import MessageOutletContainer from '@/pages/Message/MessageOutletContainer';
 import Settings from '@/pages/Settings';
 import SearchParams from "@/pages/SearchParams/SearchParams";
+import router from './routes/router';
 
 const navigateData = {
   name: "Nicholas Zakas",
@@ -41,17 +42,21 @@ const uList = [
   }
 ];
 
+
 function App() {
   const [user, setUser] = useState(navigateData);
   const [userList, setUserList] = useState(uList);
+  // 这里一定要使用函数，然后在组件内部通过组件方式调用
+  const Router = () => useRoutes(router);
   return (
     <div className="App">
       <Header />
       <div className='page-container'>
-        <Routes>
+        <Router />
+        {/* <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/newsList" element={<NewsList />} />
-          {/* <Route path='/feedback' element={<Feedback />} /> */}
+          <Route path='/feedback' element={<Feedback />} />
           <Route path='/feedback' element={<Navigate to='/navigateCmp' state={"从feedback重定向来的"} />} />
           <Route path='/feed' element={<Navigate to='/navigateObj' state={user} />} />
           <Route path='/userList' element={<Navigate to={'/navigateList'} state={userList} />} />
@@ -73,7 +78,7 @@ function App() {
           <Route path='/settings' element={<Settings />} />
           <Route path='/searchParams' element={<SearchParams />} />
           <Route path='*' element={<PageNotFound />} />
-        </Routes>
+        </Routes> */}
       </div>
     </div>
   );
